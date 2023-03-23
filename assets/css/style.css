@@ -1,0 +1,179 @@
+/*==========Google Fonts==========*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*==========Reset==========*/
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*==========Root==========*/
+:root {
+	--index: calc(1vw + 1vh);
+	--text: hsl(60, 13%, 89%);
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+/*==========Base==========*/
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+}
+body {
+	background: hsl(0, 0%, 0%);
+	line-height: 1.55;
+}
+
+.container {
+	will-change: transform;
+}
+
+/*==========Main Header==========*/
+.main__header {
+	position: relative;
+}
+.layers {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+}
+.layer__header {
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition: var(--transition);
+	will-change: transform;
+	color: var(--text);
+	z-index: 1;
+}
+.caption {
+	font-size: 2rem;
+	letter-spacing: 2px;
+	font-weight: 500;
+	text-transform: capitalize;
+	margin-top: calc(var(--index) * -.75);
+}
+.title {
+	font-size: 4rem;
+	letter-spacing: 7px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.layer {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	will-change: transform;
+	transition: var(--transition);
+	z-index: 2;
+}
+.base {
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+	filter: brightness(1.5) contrast(1.5);
+	z-index: 0;
+}
+.middle {
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+	filter: brightness(2) contrast(1.2);
+}
+.front {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+	filter: brightness(1.3) contrast(1.3);
+}
+
+/*==========Main Article==========*/
+.main__article {
+	position: relative;
+	top: -1px;
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	filter: brightness(1.5) contrast(1.5);
+	z-index: 10;
+}
+.main__article-header {
+	text-transform: uppercase;
+	font-size: 3rem;
+	letter-spacing: 4px;
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.main__article-text {
+	max-width: calc(var(--index) * 30);
+	font-size: 1.2rem;
+	font-weight: 200;
+	margin-top: calc(var(--index) / 1.25);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+
+/*==========Copy==========*/
+.copy {
+	position: absolute;
+	bottom: 4rem;
+	opacity: .45;
+	font-size: 1rem;
+	letter-spacing: 2px;
+}
+
+
+
+/*==========Media Query big screens==========*/
+@media (min-width: 1600px) {
+	.caption {
+		font-size: 4rem;
+	}
+	.title {
+		font-size: 7rem;
+	}
+	.main__article-header {
+		font-size: 6rem;
+	}
+	.main__article-text {
+		font-size: 1.6rem;
+	}
+	.copy {
+		font-size: 1.4rem;
+	}
+
+}
+
+
+
+/*==========Media Query small screens mobile==========*/
+@media (max-width: 1024px) {
+	.caption {
+		font-size: 1.5rem;
+	}
+	.title {
+		font-size: 3.5rem;
+	}
+	.main__article-header {
+		font-size: 2.2rem;
+	}
+	.main__article-text {
+		font-size: 1rem;
+	}
+	.copy {
+		font-size: .9rem;
+	}
+
+}

@@ -200,13 +200,22 @@ img {
 		font-size: 1.5rem;
 	}
 	.title {
-		font-size: 3.5rem;
+		font-size: 2.2rem;
 	}
 	.main__article-header {
 		font-size: 2.2rem;
 	}
 	.main__article-text {
 		font-size: 1rem;
+	}
+
+}
+
+
+/*==========Media Query small screens mobile==========*/
+@media (max-width: 768px) {
+	.portfolio {
+		display: none;
 	}
 
 }

@@ -16,21 +16,21 @@
 /*==========Root==========*/
 :root {
 	--index: calc(1vw + 1vh);
-	--text: hsl(60, 13%, 89%);
 	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+	--color-header: hsl(22, 27%, 94%);
+	--color-text: hsl(18, 9%, 78%);
+	--gallery-gap: calc(var(--index) * 7.5)
 }
 
 /*==========Base==========*/
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 1rem;
-}
 body {
 	background: hsl(0, 0%, 0%);
+	color: hsl(0, 0%, 98%);
 	line-height: 1.55;
+	overflow-x: hidden;
 }
 
-.container {
+.content, .hero, .gallery > * {
 	will-change: transform;
 }
 
@@ -51,7 +51,8 @@ body {
 	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
 	transition: var(--transition);
 	will-change: transform;
-	color: var(--text);
+	color: var(--color-text);
+	margin-block-end: 3rem;
 	z-index: 1;
 }
 .caption {
@@ -98,7 +99,7 @@ body {
 	min-height: 100vh;
 	background-size: cover;
 	background-position: center;
-	color: var(--text);
+	color: var(--color-text);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -125,15 +126,53 @@ body {
 	will-change: transform;
 }
 
-/*==========Copy==========*/
-.copy {
-	position: absolute;
-	bottom: 4rem;
-	opacity: .45;
-	font-size: 1rem;
-	letter-spacing: 2px;
+/*==========Portfolio==========*/
+.portfolio {
+	margin-block-start: -10rem;
 }
-
+.container {
+	padding: 0 7vw;
+	background-position: center;
+}
+.gallery {
+	display: flex;
+	padding: calc(var(--index) * 8) 0;
+}
+img {
+	border-radius: 1rem;
+	filter: brightness(1.1) contrast(1.2);
+}
+.gallery > * {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.gallery__left {
+	margin-top: calc(var(--gallery-gap) * 1.75);
+}
+.gallery__item {
+	max-width: calc(var(--index) * 21);
+	margin-bottom: 4rem;
+	max-height: 100vh;
+}
+.gallery__right .gallery__item {
+	margin: 0 auto;
+	margin-top: 6rem;
+}
+.text {
+	color: var(--color-text);
+	position: relative;
+}
+.text1 {
+	font-size: 2rem;
+	line-height: 2.4rem;
+	color: var(--color-header);
+	margin-bottom: 1.5rem;
+}
+.text2 {
+	line-height: 1.75;
+}
 
 
 /*==========Media Query big screens==========*/
@@ -150,15 +189,12 @@ body {
 	.main__article-text {
 		font-size: 1.6rem;
 	}
-	.copy {
-		font-size: 1.4rem;
-	}
 
 }
 
 
 
-/*==========Media Query small screens mobile==========*/
+/*==========Media Query small screens==========*/
 @media (max-width: 1024px) {
 	.caption {
 		font-size: 1.5rem;
@@ -171,9 +207,6 @@ body {
 	}
 	.main__article-text {
 		font-size: 1rem;
-	}
-	.copy {
-		font-size: .9rem;
 	}
 
 }

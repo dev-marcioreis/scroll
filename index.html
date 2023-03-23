@@ -23,12 +23,11 @@
 </head>
 
 <body>
-
 	<div class="wrapper">
-		<div class="container">
+		<div class="content">
 
 			<!--========Main Header========-->
-			<div class="main__header">
+			<div class="main__header" id="home">
 				<div class="layers">
 					<div class="layer__header">
 						<div class="caption">seja bem-vindo!</div>
@@ -41,21 +40,41 @@
 			</div>
 		
 			<!--========Main Article========-->
-			<article class="main__article" style="background-image: url(./assets/images/florest.jpg);">
+			<article class="main__article" style="background-image: url(./assets/images/florest.jpg);" id="about">
 				<div class="main__article-content">
 					<h2 class="main__article-header">Front-end</h2>
 					<p class="main__article-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis error provident dignissimos facere. Repellendus tempore autem qui! Quia magnam tempora esse id necessitatibus corrupti mollitia expedita sapiente cum rerum, ut dicta laboriosam!</p>
 				</div>
-
-				<!--========Copy========-->
-				<div class="copy">© 2023 Márcio Reis</div>
 			</article>
+
+			<!--========Portfolio========-->
+			<section class="portfolio" id="portfolio">
+				<div class="content container" style="background-image: url(./assets/images/stars.png);">
+					<main class="gallery">
+						<div class="gallery__left">
+							<img class="gallery__item" src="assets/images/portfolio/1.jpg">
+							<img class="gallery__item" src="assets/images/portfolio/2.jpg">
+							<div class="text gallery__item">
+								<h2 class="text1">Parallax com efeito flutuante</h2>
+								<p class="text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor amount scrolling.</p>
+							</div>
+							<img class="gallery__item" src="assets/images/portfolio/4.jpg">
+						</div>
+						<div class="gallery__right">
+							<div class="text gallery__item">
+								<h2 class="text1">Parallax com efeito flutuante</h2>
+								<p class="text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor amount scrolling.</p>
+							</div>
+							<img class="gallery__item" src="assets/images/portfolio/6.jpg">
+							<img class="gallery__item" src="assets/images/portfolio/5.jpg">
+							<img class="gallery__item" src="assets/images/portfolio/3.jpg">
+						</div>
+					</main>
+				</div>
+			</section>
 
 		</div>
 	</div>
-
-
-
 
 
 	<!--========GSAP========-->

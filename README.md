@@ -6,7 +6,7 @@ Este projeto é um teste de efeito parallax.
 
 ## 🚀 Finalizado.
 
-## 📋 Técnologias
+## 📋 Tecnologias
 JavaScript + GSAP
 
 ## ✒️ Autor
